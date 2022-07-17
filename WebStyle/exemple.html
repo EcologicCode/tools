@@ -8,7 +8,9 @@
     
     Langs
     La partie du site Informatique (et vous y trouverez OpenCreators) Outils du site... Store Center : Le Store Officiel d'ExologicCode.
-    Linux (Plus précisément Ubuntu & Kubuntu Plasma)</div><div id="d3">3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div><input type="button" value="Suivant" onClick="next();"><input type="button" value="Précédent" onClick="back();"><script type="text/javascript">var i = 0;
+    Linux (Plus précisément Ubuntu & Kubuntu Plasma)</div><div id="d3">3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div><input type="button" value="Suivant" onClick="next();"><input type="button" value="Précédent" onClick="back();"><script type="text/javascript">var i = 1;
 $("#d2").toggle("slide");
-function next(){if(i=0){$("#d1").toggle("slide");$("#d2").toggle("slide");i=1;}else if(i==1){$("#d2").toggle("slide");$("#d3").toggle("slide");i=2;}else {$("#d3").toggle("slide");$("#d1").toggle("slide");i=0;}}
-function back(){if(i=0){$("#d2").toggle("slide");$("#d3").toggle("slide");i=2;}else if(i==1){$("#d3").toggle("slide");$("#d2").toggle("slide");i=1;}else {$("#d3").toggle("slide");$("#d2").toggle("slide");i=0;}}</script>
+$("#d3").toggle("slide");
+var max = 3;
+function next(){$("#d"+i).toggle("slide");if(i!=max){$("#d"+(i+1)).toggle("slide");}else {i=1;$("#d"+i).toggle("slide");}}
+function back(){$("#d"+i).toggle("slide");if(i!=max){$("#d"+(i-1)).toggle("slide");}else {i=3;$("#d"+i).toggle("slide");}}</script>
