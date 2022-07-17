@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Raw d'Impession- EditorWeb</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="text">
+        Euh... Y'a pas de texte.
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+        const str = window.location.href;
+
+        const words = str.split('#');
+        $("#text").html(decodeURI(words[1]));
+        window.print();
+    });
+    </script>
+</body>
+</html>

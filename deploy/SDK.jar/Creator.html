@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/informatique/assets/css/style.css?v=8d98c6249db6d5f7df891a825165076e8d5b9b2d">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup theme-color -->
+<!-- start theme color meta headers -->
+<meta name="theme-color" content="#151515">
+<meta name="msapplication-navbutton-color" content="#151515">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- end theme color meta headers -->
+
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/informatique/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Créateur SDK.jar | OpenCreatorsToolsDeployment | La partie du site spéciale informatique.</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="informatique" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="La partie du site spéciale informatique." />
+<meta property="og:description" content="La partie du site spéciale informatique." />
+<link rel="canonical" href="https://ecologiccode.github.io/informatique/OpenCreators/tools/deploy/SDK.jar/Creator.html" />
+<meta property="og:url" content="https://ecologiccode.github.io/informatique/OpenCreators/tools/deploy/SDK.jar/Creator.html" />
+<meta property="og:site_name" content="informatique" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="informatique" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"La partie du site spéciale informatique.","headline":"informatique","url":"https://ecologiccode.github.io/informatique/OpenCreators/tools/deploy/SDK.jar/Creator.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/informatique/">
+          <h1>informatique</h1>
+        </a>
+        <h2>La partie du site spéciale informatique.</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/EcologicCode/informatique" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>Créateur SDK.jar</h1>
+<p>Remarque : Le programme n’est pas Terminé. Ni celui en Java.<br /></p>
+<hr />
+<div id="Creator">
+<p>Nom du programme : <input type="text" id="name" /><br />
+Organisation/Créateur : <input type="text" id="Company" /><br />
+Version Actuelle (*.*.*) : <input type="text" id="Version" /><br />
+Programme d’éxécution Central (</em>.exe, programme Linux, *.deb, (Et toutes les autres extentions de fichiers)) : <input type="text" id="ProgramExec" /><br />
+Language : <select class="Language">
+    <option value="0">Aucun</option>
+    <option value="1">C++</option>
+</select><br />
+Nombre de packages(Illimité, un package peut faire jusqu’à 99.9 Mo & un package c'est un Zip) : <input type="number" id="Packages" name="Packages" min="1" max="9999999999" placeholder="Nombre de packages de 0 à 99.9 Mo" /><br /></p>
+<input type="button" onclick="Generate()" value="Générer le programme d'installation"></div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  var name;
+  var Organisation;
+  var Version;
+  var Language;
+  var Packages;
+
+  function Generate() {
+    name = $("#name").val();
+    Organisation = $("#Company").val();
+    Version = $("#Version").val();
+    Language = $("#Language").children("option:selected").val();
+    PackagesNbr = parseInt(document.getElementById("Packages").value, 0);
+    var AppDat = name+"<br>";
+    AppDat += Organisation+"<br>";
+    AppDat += Version+"<br>";
+    AppDat += "[Entrez ici le chemin du fichier Version.dat sur Internet]<br>[Entrez ici le chemin du fichier package.dat sur Internet]";
+
+    var package = "";
+    for(var i=1;i<=PackagesNbr;i++){
+      package+="[Entrez ici le nom du package n°"+i;
+      package+="]<br>[Entrez ici le chemin du zip de ce package n°"+i;
+      package+="]<br>[Entrez ici le dossier d'instalation de package n°"+i;
+      package+=" ou rien du tout pour l'installer dans le dossier racine de celui de l'installation]<br>";
+      package+=Version+"<br>";
+    }
+
+    var rendu = "<a href=\"doc/index.html#dev\">Guide d'utilisation</a><br>";
+    rendu += "Fichier App.dat :<br><fieldset>"+AppDat+"</fieldset>";
+    rendu += "Fichier Version.dat :<fieldset>"+Version+"</fieldset>";
+    rendu += "Fichier package.dat :<fieldset>"+package+"</fieldset>";
+
+    $("#Creator").html(rendu);
+  }
+</script>
+      </section>
+    </div>
+  </body>
+</html>
