@@ -54,12 +54,16 @@
 <a href="../"><img src="../back.png" title="Revenir en arrière" alt="Revenir en arrière"/></a><br>
 <h2>Back&Next</h2>
 Back&Next est un système de boutons (un avec précédent, l'autre avec suivant et un bouton OK(optitionnel))<br>
-Le principe de fonctionnement est très simple : <br>Il suffit de remplir le formulaire puis d'appuyer sur Générer, de choisir un mode de rendu (Page web complète, Page Php complète, morceau de code) et enfin... Voilà ! (Si vous appuyez sur Page web complète ou Page Php complète, on vous demandera un titre de page Web)<hr><div id="form"><input type="button" value="Ajouter une phase" onClick="Add(0);"></div>
+Le principe de fonctionnement est très simple : <br>Il suffit de remplir le formulaire puis d'appuyer sur Générer, de choisir un mode de rendu (Page web complète, Page Php complète, morceau de code) et enfin... Voilà ! (Si vous appuyez sur Page web complète ou Page Php complète, on vous demandera un titre de page Web)<hr><div id="form"><input type="button" value="Ajouter une page" onClick="Add(0);">
+<div id="pages"><h2>N°1</h2>Nom : <input type="text" id="Name0"><br>Texte/code : <textarea id="code0" rows="10" cols="20"><br>
+<h2>N°2</h2>Nom : <input type="text" id="Name1"><br>Texte/code : <textarea id="code1" rows="10" cols="20"><br></textarea></div></div></div>
 <script type="text/javascript" src="/JQuery/jquery.js"></script>
 <script type="text/javascript">
+  var pages = 1;
     function Add(type) {
         if(type==0){
-            $("#form").html($("#form").html()+"<br>II");
+            pages++;
+            $("#pages").html($("#pages").html()+"<h2>N°"+(pages+1)+"</h2>Nom : <input type=\"text\" id=\"Name"+pages+"\"><br>Texte/code : <textarea id=\"code"+pages+"\" rows=\"10\" cols=\"20\"><br>");
         }
     }
 </script>
