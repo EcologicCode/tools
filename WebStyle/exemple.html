@@ -1,10 +1,24 @@
 <script src="/JQuery/jquery.js"></script><div id="content1">One</div><div id="content2"></div>
 <br><input type="button" value="suivant" onClick="next()">
+<input type="button" value="précédent" onClick="back()">
 <script type="text/javascript">
     var i = 1, cs=1;
     var c = ["One", "Two", "three"];
     $("#content2").toggle("slide");
     function next(){
+        i++;
+        $("#content"+cs).toggle("slide");
+        if(cs==1){
+            cs=cs+1;
+        }else
+            cs=cs-1;
+        if(i==3)
+            i=1
+        $("#content"+cs).html(c[i]);
+        $("#content"+cs).toggle("slide");
+        console.log(i);
+    }function back(){
+        i--;
         $("#content"+cs).toggle("slide");
         if(cs==1){
             cs=cs+1;
@@ -14,7 +28,6 @@
             i=0
         $("#content"+cs).html(c[i]);
         $("#content"+cs).toggle("slide");
-        i++;
         console.log(i);
     }
 </script>
