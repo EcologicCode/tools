@@ -1,12 +1,16 @@
-<script src="/JQuery/jquery.js"></script><div id="content">One</div>
+<script src="/JQuery/jquery.js"></script><div id="content1">One</div><div id="content2"></div>
 <br><input type="button" value="suivant" onClick="next()">
 <script type="text/javascript">
-    var i = 0;
+    var i = 1, cs=1;
     var c = ["One", "Two", "three"];
     function next(){
-        $("#content").toggle("slide");
+        $("#content"+cs).toggle("slide");
         $("#content").html(c[i]);
-        $("#content").toggle("slide");
+        if(cs==1){
+            cs++;
+        }else
+            cs--;
+        $("#content"+cs).toggle("slide");
         i++;
     }
 </script>
