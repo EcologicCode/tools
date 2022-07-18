@@ -5,11 +5,11 @@
     var c = ["One", "Two", "three"];
     function next(){
         $("#content"+cs).toggle("slide");
-        $("#content"+cs).html(c[i]);
         if(cs==1){
             cs+cs+1;
         }else
             cs-cs-1;
+        $("#content"+cs).html(c[i]);
         $("#content"+cs).toggle("slide");
         i++;
     }
