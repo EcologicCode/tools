@@ -13,7 +13,7 @@
         }else
             cs=cs-1;
         if(i==3)
-            i=1
+            i=0
         $("#content"+cs).html(c[i]);
         $("#content"+cs).toggle("slide");
         console.log(i);
@@ -24,8 +24,8 @@
             cs=cs+1;
         }else
             cs=cs-1;
-        if(i==3)
-            i=0
+        if(i==0)
+            i=3
         $("#content"+cs).html(c[i]);
         $("#content"+cs).toggle("slide");
         console.log(i);
