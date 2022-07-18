@@ -1,17 +1,12 @@
-<script src="/JQuery/jquery.js"></script><div id="d1">Hello !</div><div id="d2">EcologicCode.github.io
-    Le site WebAssembly d'EcologicCode
-    Informatique - Mon Compte - Communauté... - Outils
-    
-    Follow me on GitHub
-    Ecologic Code
-    Autre version du site disponible ici
-    
-    Langs
-    La partie du site Informatique (et vous y trouverez OpenCreators) Outils du site... Store Center : Le Store Officiel d'ExologicCode.
-    Linux (Plus précisément Ubuntu & Kubuntu Plasma)</div><div id="d3">3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div><input type="button" value="Suivant" onClick="next();"><input type="button" value="Précédent" onClick="back();">
-    <div id="debug">Débogage : 1</div><script type="text/javascript">var i = 1;
-$("#d2").toggle("slide");
-$("#d3").toggle("slide");
-var max = 3;
-function next(){$("#d"+i).toggle("slide");if(i!=max){$("#d"+(i+1)).toggle("slide");}else {i=0;$("#d"+i).toggle("slide");}i++; $("#debug").html("Débogage : "+i);}
-function back(){$("#d"+i).toggle("slide");if(i!=max){$("#d"+(i-1)).toggle("slide");}else {i=4;$("#d"+i).toggle("slide");}i--;$("#debug").html("Débogage : "+i);}</script>
+<script src="/JQuery/jquery.js"></script><div id="content">One</div>
+<br><input type="button" value="suivant" onClick="next()">
+<script type="text/javascript">
+    var i = 0;
+    var c = ["One", "Two", "three"];
+    function next(){
+        $("#content").toggle("slide");
+        $("#content").html(c[i]);
+        $("#content").toggle("slide");
+        i=0;
+    }
+</script>
